@@ -39,4 +39,4 @@ RUN mkdir -p $XDG_CONFIG_HOME/kustomize/plugin/rakuten.tv/v1/simplesops && \
 
 # Add the CI test script
 ADD . /
-RUN chmod +x /start.sh
+RUN chmod +x ./start.sh

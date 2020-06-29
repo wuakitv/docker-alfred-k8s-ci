@@ -2,7 +2,7 @@
 
 set -e
 
-function exit_error {
+exit_error() {
   echo "*** ERROR: ${1}"
   exit 1
 }
