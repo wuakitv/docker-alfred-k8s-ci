@@ -40,8 +40,3 @@ RUN mkdir -p $XDG_CONFIG_HOME/kustomize/plugin/rakuten.tv/v1/simplesops && \
 # Add the CI test script
 ADD . /
 RUN chmod +x /start.sh
-
-# Create the workspace
-RUN mkdir /usr/src/k8s
-WORKDIR /usr/src/k8s
-RUN git clone $GIT_URL && cd !$:t
