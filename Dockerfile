@@ -9,7 +9,7 @@ ENV SOPS_VERSION=v3.5.0
 ENV XDG_CONFIG_HOME=/root/.config
 ENV KUSTOMIZE_PLUGIN_HOME=$XDG_CONFIG_HOME/kustomize/plugin
 
-RUN apt-get update && apt-get install -y curl gawk && apt-get clean && \
+RUN apt-get update && apt-get install -y curl gawk git && apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install ArgoCD CLI
