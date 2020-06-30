@@ -13,11 +13,11 @@ exit_error() {
 
 # Validate all YAML configuration via Kustomize, Kubeval and Kube-Score
 for overlay in overlays/*/; do
-  printf "\nValidating the build of ${overlay}."
+  printf "\nValidating the build of ${overlay}.\n"
   kustomize build $overlay --enable_alpha_plugins > kustomize.yaml
-  printf "\nValidating the deploy with Kubeval:"
+  printf "\nValidating the deploy with Kubeval:\n"
   kubeval --strict --ignore-missing-schemas --kubernetes-version 1.15.0 kustomize.yaml
-  printf "\nScoring the deploy with Kube-Score:"
+  printf "\nScoring the deploy with Kube-Score:\n"
   ! kube-score score kustomize.yaml --output-format ci
   rm kustomize.yaml
 done
